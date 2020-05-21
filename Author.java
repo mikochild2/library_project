@@ -1,0 +1,22 @@
+public class Author {
+    private String name;
+
+    public Author(String name){
+        this.name = name;
+    }
+
+    //Getter
+    public String getName(){
+        return name;
+    }
+
+    //Setter
+    public void setName(String name){
+        this.name = name;
+    }
+
+    @Override
+    public String toString(){
+        return "Author: " + name;
+    }
+}
