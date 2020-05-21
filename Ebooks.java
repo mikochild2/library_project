@@ -9,4 +9,8 @@ public class Ebooks extends LibraryItem {
         this.format = format;
         this.artist = artist;
     }
+
+    //getters
+
+    //setters
 }
