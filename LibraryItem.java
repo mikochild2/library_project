@@ -8,10 +8,12 @@ public class LibraryItem{
     private String subgenre;
     private int totalCopies;
     private int availCopies;
+    private FormatOptions formatOption;
     //more variables in my outline that I will add later after I get this working
 
 
-    public LibraryItem(long id, String title, Author authors[], String publisher, int pages, String genre, String subgenre, int totalCopies, int availCopies){
+    public LibraryItem(long id, String title, Author[] authors, String publisher,
+            int pages, String genre, String subgenre, int totalCopies, int availCopies, FormatOptions formatOption) {
         this.id = id;
         this.title = title;
         this.authors = authors;
@@ -21,6 +23,7 @@ public class LibraryItem{
         this.subgenre = subgenre;
         this.totalCopies = totalCopies;
         this.availCopies = availCopies; 
+        this.formatOption = formatOption;
     }
 
     public void itemAdded(){
@@ -29,6 +32,11 @@ public class LibraryItem{
     
 
     //Getters
+
+    public FormatOptions getFormatOption(){
+        return formatOption;
+    }
+
     public long getId(){
         return id;
     }
@@ -63,6 +71,10 @@ public class LibraryItem{
 
     //setters
 
+    public void setFormatOption(FormatOptions formatOption){
+        this.formatOption = formatOption;
+    }
+
     public void setId(long id){
         this.id = id;
     }
@@ -93,5 +105,10 @@ public class LibraryItem{
 
     public void setAvailCopies(int availCopies){
         this.availCopies = availCopies;
+    }
+
+    @Override
+    public String toString(){
+        return "\nTitle: " + title + "Author(s): " + authors + "Publisher: " + publisher + "Genere: " + genre + "Subgenre: " + subgenre + "Pages: " + pages + "Total Copies: " + totalCopies + "Available Copies: " + availCopies;
     }
 }
